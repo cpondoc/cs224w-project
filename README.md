@@ -1,4 +1,10 @@
-# CS 224W -- Working on RelBench
+# Exploring the Impacts of Architecture and Scale on GNN Performance on Relational Data
+
+By: Joseph Guman, Atindra Jha, and Christopher Pondoc
+
+## Abstract
+
+For our CS 224W project, our team will evaluate the performance of graph neural network (GNN) methods on relational databases using RelBench. In particular, we’ll use the open-source implementation of Relational Deep Learning (RDL) as a launching pad and explore several choices around architecture and scale to optimize performance. During this process, we would also like to extend the existing RelBench package to enhance the user experience by allowing users to add their own SQL datasets to the pipeline for easy training and evaluation. The aim is to spark more excitement and investigations into the intersection of GNNs and relational data by adopting RelBench and PyG. 
 
 ## Installation
 
