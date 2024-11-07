@@ -1,6 +1,7 @@
 """
 Separate file for defining 
 """
+
 from torch.nn import BCEWithLogitsLoss
 import copy
 from typing import Any, Dict, List
@@ -20,6 +21,7 @@ class RDLModel(torch.nn.Module):
     """
     Class for model for Relational Deep Learning.
     """
+
     def __init__(
         self,
         data: HeteroData,
