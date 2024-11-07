@@ -1,6 +1,7 @@
 """
 Code to define training and testing loops for our RDL models.
 """
+
 import copy
 import math
 import numpy as np
@@ -11,6 +12,7 @@ from tqdm import tqdm
 # Global constants for node classification tasks
 tune_metric = "roc_auc"
 higher_is_better = True
+
 
 def train(model, device, optimizer, loader_dict, task, loss_fn, entity_table) -> float:
     """
@@ -57,17 +59,33 @@ def test(loader: NeighborLoader, model, task, device) -> np.ndarray:
         pred_list.append(pred.detach().cpu())
     return torch.cat(pred_list, dim=0).numpy()
 
-def training_run(model, device, optimizer, task, loader_dict, val_table, loss_fn, entity_table, epochs = 10):
+
+def training_run(
+    model,
+    device,
+    optimizer,
+    task,
+    loader_dict,
+    val_table,
+    loss_fn,
+    entity_table,
+    epochs=10,
+    state_dict=None,
+):
     """
     Training loop of training, running on validation set, and then returning best set of weights.
     """
-    state_dict = None
+    state_dict = state_dict if state_dict else None
     best_val_metric = -math.inf if higher_is_better else math.inf
     for epoch in range(1, epochs + 1):
-        train_loss = train(model, device, optimizer, loader_dict, task, loss_fn, entity_table)
+        train_loss = train(
+            model, device, optimizer, loader_dict, task, loss_fn, entity_table
+        )
         val_pred = test(loader_dict["val"], model, task, device)
         val_metrics = task.evaluate(val_pred, val_table)
-        print(f"Epoch: {epoch:02d}, Train loss: {train_loss}, Val metrics: {val_metrics}")
+        print(
+            f"Epoch: {epoch:02d}, Train loss: {train_loss}, Val metrics: {val_metrics}"
+        )
 
         if (higher_is_better and val_metrics[tune_metric] > best_val_metric) or (
             not higher_is_better and val_metrics[tune_metric] < best_val_metric
@@ -75,6 +93,7 @@ def training_run(model, device, optimizer, task, loader_dict, val_table, loss_fn
             best_val_metric = val_metrics[tune_metric]
             state_dict = copy.deepcopy(model.state_dict())
     return state_dict
+
 
 def eval_model(model, loader_dict, split, task, device, table):
     """
