@@ -1,9 +1,7 @@
 """
-Separate file for defining 
+Separate file for defining the Relational Deep Learning (RDL) model.
 """
 
-from torch.nn import BCEWithLogitsLoss
-import copy
 from typing import Any, Dict, List
 
 import torch
