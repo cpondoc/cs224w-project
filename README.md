@@ -30,4 +30,5 @@ If setting up on Colab, note that the official tutorial from Relbench on trainin
 !pip install torch-geometric torch-sparse torch-scatter torch-cluster torch-spline-conv pyg-lib -f https://data.pyg.org/whl/torch-2.4.0+cpu.html
 !pip install pytorch_frame
 !pip install relbench
+!pip install sentence_transformers
 ```
