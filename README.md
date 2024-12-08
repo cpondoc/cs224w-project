@@ -1,4 +1,4 @@
-# Exploring the Impacts of Architecture and Scale on GNN Performance on Relational Data
+# Exploring the Impacts of GNN Architecture and Scale on Learning from Relational Data
 
 By: Joseph Guman, Atindra Jha, and Christopher Pondoc
 
