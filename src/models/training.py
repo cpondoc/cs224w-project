@@ -106,3 +106,4 @@ def eval_model(model, loader_dict, split, task, device, table):
     else:
         metrics = task.evaluate(pred, table)
     print(f"Best {split} metrics: {metrics}")
+    return metrics
