@@ -16,7 +16,7 @@ See relevant documents in the `reports` folder.
 
 ## Installation
 
-If building our code from scratch, you can set it up just like any normal project:
+If building our code from scratch, you can set it up just like any normal project. We specifically use Python 3.9.20 for our installation:
 
 ```bash
 python3 -m venv env
