@@ -31,4 +31,7 @@ If setting up on Colab, note that the official tutorial from Relbench on trainin
 !pip install pytorch_frame
 !pip install relbench
 !pip install sentence_transformers
+!pip install lightgbm
+!pip install optuna
+!pip install matplotlib
 ```
