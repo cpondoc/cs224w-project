@@ -8,7 +8,9 @@ Our project involves evaluating the performance of graph neural network (GNN) me
 
 ## Structure
 
-The core tutorial is currently in `draft_tutorial.ipynb`. Our intention is that the tutorial will only focus on helping the user explore the different ablation axes -- choice of task, architecture, scale, etc. -- while abstracting away all of the nitty-gritty of Relbench. The code for the latter is in `src`.
+The core tutorial is currently in `tutorial.ipynb`. Our intention is that the tutorial will only focus on helping the user explore the different ablation axes -- choice of task, architecture, scale, etc. -- while abstracting away all of the nitty-gritty of Relbench. The code for the latter is in `src`.
+
+We also ran some other experiments on larger datasets. The successful ones can be found in `experiments/`. `old/` contains some older, unsuccessful experiments (i.e., because we were unable to load in all of the data from RelBench).
 
 ## Progress
 
