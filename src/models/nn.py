@@ -8,7 +8,7 @@ from torch_geometric.typing import EdgeType, NodeType
 
 class HeteroGAT(torch.nn.Module):
     """
-    Implementation of heterogeneous GCN.
+    Implementation of heterogeneous GAT.
     """
 
     def __init__(
